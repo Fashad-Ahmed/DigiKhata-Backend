@@ -1,12 +1,13 @@
 import { Controller, Post, Body, Req } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { Request } from 'express';
+import { Model } from 'mongoose';
 
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @Post('/sigin')
+  @Post('/signin')
   async signin(
     @Body('email') email: string,
     @Body('password') password: string,
